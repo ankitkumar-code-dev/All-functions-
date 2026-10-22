@@ -1,0 +1,384 @@
+// ============================================
+// Ration Card API - Cloudflare Worker
+// Buy @suryaxz (Surya Hacker)
+// ============================================
+
+// Public key (encryption ke liye - safe)
+const PUBLIC_KEY_PEM = `-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArpgmSqIv/3zYAxoNK/6e
+LqjeBEHFsiGJCia5wdQuhCw54ceg6EyKc5mPrkEnK7CYgbJxSQO37HbnWIROMN6k
+RQqxa1kZFFS+xQPZ9z4Gs+njypX8HNKcse2/kbwbIX4y8kcCENVVOV8URK8+znEs
+uN/UCzJXv2Pg0KII5ofb8wAvYNXkZ44DhcWnyxO6JohbuMvpt096NBkdq8lWtRra
+ppL3HqpTG4Fd5H4v9b7fD8rAhBB8cAbiM2nyBz51VDovS/SZheIemKjwGLGMDiMe
+NcQGryOTZASX+jxe69NoFR9bQ8+5jN/88x5k53UzV8en+HRKbYjgUJzZOVfu3fL/
+WQIDAQAB
+-----END PUBLIC KEY-----`;
+
+// Aadhaar encryption key (meraration.nic.in ke liye)
+const AADHAR_AES_KEY_HEX = "64ca098b0a8481987615e69b0f8d43ef";
+const AADHAR_AES_IV_HEX = "6e696340696d70647323646564757030";
+
+// UMANG API headers
+const UMANG_API_KEY = "VKE9PnbY5k1ZYapR5PyYQ33I26sXTX569Ed7eqyg";
+const UMANG_RAW_DATA = "ktoF3BcqssgChOY0M7yu84kdydaruQcXgJMz4Rd2d4GtCYqp3ad7xx/CNFSjKYC3YKK1V61xksRZ61ZsN732JJmxR1oCMbbCcQle8CxnQiN9ap9KZfmXgFWuZjLYLZTLDcnXh9uZ8nczszPSvH1wzHWfoiswtQoi37T3LsoOb/bEhT6MeG7sb6+vbZF9uV1c5FLvHamXtcHFxlTjkBqWfz7qZa2OjyvuTuxjrxkXnTLiTZ/YhW/1oPU7uTkPSwBFwjRjTtRLQPo9J9f+iC7vpQrAXOnor5wnOeRd10Jm9j2JhBGb/iSEXeDPR1ol+jrqYBiFWhjHcwqlwA89CMVTOg==:Ys5lG+CTMq5+Kz0oXsQuElLMS+XmJZc4WXXEO7vUd8ng+Qgzw0qzn7gz5ZDWTTi5NmkAMxN4VwLm9Y2ocsOar0PpNwQBwbIj8hcTEFiBuAeS3uTGXIEqJ4hPZXJ87roAhFjI4YGSn7ZsKA1hNdVoHktdxrAccYfOeOcBm3lT22SBynNdW9PLrtt+XKQajCOmBsI42BYhTZdxUgLo1Mvkm9WvXJNJGBvCzUKQRrsZ8z+DkJSKxpewe8oANg3R528zgwDEgyLW8mqWWUBFdaTNbGL5Su600X7aAkKJgRayn34ENB0rvjLEWJ6ktuPOoFP3rnB1CE3kAgSd2gocMSOQVA==:aECVeb3lEVf85YWqwcTosePQ5z1k1/hSinrqeOZfHKD/+eH9Pd22XlgGZ79bMuZaptE9Vh4SMN5LxVr6fpT/o4xfilKLRnMXv4NH6GsUN+Rg8X0yeari0H9t5GWpzd2dzHHYPOHB1umewFYkhHdLBuHWM9j+RQYOhJhLvPBbGDFxdDZWppzLiPqgojMihLEYMx5JZUutBdSZT9HLT3KOKjBjz2ZGhFWFSEC3Ofncy6HNnkZRZdb4YXXzjczmOqW07OMOo8WGmomWS5Kdubm8+C1MeIqXOYcb36odIu8hKiR3n5kwwbWC4TDLXzHZJYMxF0ZQEhwGf1FmGhVI1Ttwa1UVbXu+CINCn8fYFYlc464ZMk0KxLnJ4MftRHrzhf4Yo4TigXli1sIGU8I/Gfh+HNnwrcTlR0CS3FRFyjMAoa7V4AlXGZbP4C2KB04sf4yS+K+HrFHEcvjf+icnWQ4aolUsgxZbQlonW++TlrtXD3pl412WDElbFVr/Iris9LO1";
+
+// Secret: private key env se aayegi
+// Set via: wrangler secret put UMANG_PRIVATE_KEY_PEM
+// OR Cloudflare Dashboard → Settings → Variables → Secret
+
+// ============================================
+// Hex to Uint8Array
+// ============================================
+function hexToBytes(hex) {
+  const bytes = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < hex.length; i += 2) {
+    bytes[i / 2] = parseInt(hex.substr(i, 2), 16);
+  }
+  return bytes;
+}
+
+// ============================================
+// Base64 helpers
+// ============================================
+function base64ToBytes(b64) {
+  const binary = atob(b64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return bytes;
+}
+
+function bytesToBase64(bytes) {
+  let binary = '';
+  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+  return btoa(binary);
+}
+
+// ============================================
+// Aadhaar encryption (double base64 AES-CBC)
+// ============================================
+async function aadharNum(uid) {
+  const key = hexToBytes(AADHAR_AES_KEY_HEX);
+  const iv = hexToBytes(AADHAR_AES_IV_HEX);
+  const cryptoKey = await crypto.subtle.importKey(
+    'raw', key, { name: 'AES-CBC' }, false, ['encrypt']
+  );
+  const data = new TextEncoder().encode(uid);
+  const encrypted = await crypto.subtle.encrypt(
+    { name: 'AES-CBC', iv }, cryptoKey, data
+  );
+  const b64_1 = bytesToBase64(new Uint8Array(encrypted));
+  // Second base64
+  const b64_2 = btoa(b64_1);
+  return b64_2;
+}
+
+// ============================================
+// RSA + AES Crypto (UMANG format)
+// ============================================
+async function importPublicKey(pem) {
+  const pemContents = pem.replace(/-----[^-]+-----/g, '').replace(/\s/g, '');
+  const binaryDer = base64ToBytes(pemContents);
+  return await crypto.subtle.importKey(
+    'spki', binaryDer,
+    { name: 'RSA-OAEP', hash: 'SHA-256' },
+    false, ['encrypt']
+  );
+}
+
+async function importPrivateKey(pem) {
+  const pemContents = pem.replace(/-----[^-]+-----/g, '').replace(/\s/g, '');
+  const binaryDer = base64ToBytes(pemContents);
+  return await crypto.subtle.importKey(
+    'pkcs8', binaryDer,
+    { name: 'RSA-OAEP', hash: 'SHA-256' },
+    false, ['decrypt']
+  );
+}
+
+async function cryptoEncrypt(payloadDict) {
+  const publicKey = await importPublicKey(PUBLIC_KEY_PEM);
+
+  // Random AES key and IV
+  const aesKey = crypto.getRandomValues(new Uint8Array(32));
+  const aesIv = crypto.getRandomValues(new Uint8Array(16));
+
+  // AES-CBC encrypt payload
+  const aesCryptoKey = await crypto.subtle.importKey(
+    'raw', aesKey, { name: 'AES-CBC' }, false, ['encrypt']
+  );
+  const payloadBytes = new TextEncoder().encode(JSON.stringify(payloadDict));
+  const encryptedData = await crypto.subtle.encrypt(
+    { name: 'AES-CBC', iv: aesIv }, aesCryptoKey, payloadBytes
+  );
+
+  // RSA-OAEP encrypt AES key + IV separately
+  const encKey = await crypto.subtle.encrypt(
+    { name: 'RSA-OAEP' }, publicKey, aesKey
+  );
+  const encIv = await crypto.subtle.encrypt(
+    { name: 'RSA-OAEP' }, publicKey, aesIv
+  );
+
+  return [
+    bytesToBase64(new Uint8Array(encKey)),
+    bytesToBase64(new Uint8Array(encIv)),
+    bytesToBase64(new Uint8Array(encryptedData))
+  ].join(':');
+}
+
+async function cryptoDecrypt(encryptedString, privateKeyPem) {
+  const parts = encryptedString.trim().split(':');
+  if (parts.length !== 3) {
+    throw new Error("Invalid encrypted shape. Expected 3 base64 segments.");
+  }
+  const [encKeyB64, encIvB64, encDataB64] = parts;
+  const encKey = base64ToBytes(encKeyB64);
+  const encIv = base64ToBytes(encIvB64);
+  const encData = base64ToBytes(encDataB64);
+
+  const privateKey = await importPrivateKey(privateKeyPem);
+
+  // RSA decrypt AES key + IV
+  const aesKey = await crypto.subtle.decrypt(
+    { name: 'RSA-OAEP' }, privateKey, encKey
+  );
+  const aesIv = await crypto.subtle.decrypt(
+    { name: 'RSA-OAEP' }, privateKey, encIv
+  );
+
+  // AES-CBC decrypt
+  const aesCryptoKey = await crypto.subtle.importKey(
+    'raw', aesKey, { name: 'AES-CBC' }, false, ['decrypt']
+  );
+  const decrypted = await crypto.subtle.decrypt(
+    { name: 'AES-CBC', iv: new Uint8Array(aesIv) }, aesCryptoKey, encData
+  );
+  return new TextDecoder().decode(decrypted);
+}
+
+// ============================================
+// Safe upstream fetch (text first, no JSON.parse crash)
+// ============================================
+async function safeFetch(url, options) {
+  let res;
+  try {
+    res = await fetch(url, options);
+  } catch (e) {
+    throw new Error(`Upstream network error: ${e.message}`);
+  }
+  const rawText = await res.text();
+
+  if (!res.ok) {
+    const snippet = rawText.slice(0, 200).replace(/\s+/g, ' ').trim();
+    throw new Error(`Upstream error: HTTP ${res.status} - ${snippet || 'no body'}`);
+  }
+  if (!rawText || rawText.trim().length === 0) {
+    throw new Error("Upstream returned empty response");
+  }
+  return rawText;
+}
+
+// ============================================
+// Step 1: Aadhaar → Ration Card Number
+// ============================================
+async function getRationFromAadhar(aadhar) {
+  const url = "https://meraration.nic.in/onorc/v1/verifyAadharNumber";
+  const encryptedAadhar = await aadharNum(aadhar);
+
+  const payload = {
+    aadharNumber: encryptedAadhar,
+    forceUpdate: ""
+  };
+
+  const headers = {
+    'User-Agent': 'Dart/3.5 (dart:io)',
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'language': 'en',
+    'userid': '',
+    'authorization': 'Bearer',
+    'key': '1a7a78f970a7a6d0a5042aebc0fbf4a67c999a87c9fde871b17017c82b477396'
+  };
+
+  const rawText = await safeFetch(url, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(payload)
+  });
+
+  try {
+    return JSON.parse(rawText);
+  } catch {
+    throw new Error(`Ration API returned non-JSON: ${rawText.slice(0, 120)}`);
+  }
+}
+
+// ============================================
+// Step 2: Ration Card → UMANG Family Data
+// ============================================
+async function fetchUmangData(rationCardNumber, privateKeyPem) {
+  // Decrypt RAW_DATA to get session vars
+  const decryptedRaw = await cryptoDecrypt(UMANG_RAW_DATA, privateKeyPem);
+  const browserData = JSON.parse(decryptedRaw);
+
+  const activeSessionId = browserData.sessionId;
+  const activeTkn = browserData.tkn;
+  const activeUsrid = browserData.usrid;
+
+  if (!activeSessionId || !activeTkn) {
+    throw new Error("Session variables not found in decrypted payload");
+  }
+
+  // Random 6-digit numbers
+  const rand = () => String(Math.floor(100000 + Math.random() * 900000));
+
+  const newPayload = {
+    tkn: activeTkn,
+    trkr: rand(),
+    lang: "en", lat: "21", lon: "90", lac: "90", usag: "90",
+    apitrkr: rand(),
+    usrid: activeUsrid,
+    mode: "web", pltfrm: "linux",
+    did: rand(),
+    deptid: "317", formtrkr: "0", srvid: "1519", subsid: "0", subsid2: "0",
+    id: rationCardNumber,
+    sessionId: activeSessionId,
+    userName: "umang", idType: "R", token: "Um@93259@"
+  };
+
+  const encryptedBody = await cryptoEncrypt(newPayload);
+
+  const url = 'https://apigw.umangapp.in/onorcApi/ws1/getrationcard';
+
+  const postHeaders = {
+    'accept': 'application/json',
+    'content-type': 'application/json',
+    'deptid': '317',
+    'formtrkr': '0',
+    'origin': 'https://web.umang.gov.in',
+    'priority': 'u=1, i',
+    'referer': 'https://web.umang.gov.in/',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'cross-site',
+    'srvid': '1519',
+    'subsid': '0',
+    'subsid2': '0',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0 Safari/537.36',
+    'x-api-key': UMANG_API_KEY
+  };
+
+  const rawText = await safeFetch(url, {
+    method: 'POST',
+    headers: postHeaders,
+    body: encryptedBody
+  });
+
+  const decryptedResponse = await cryptoDecrypt(rawText, privateKeyPem);
+  return JSON.parse(decryptedResponse);
+}
+
+// ============================================
+// CORS
+// ============================================
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, x-api-key',
+  'Content-Type': 'application/json'
+};
+
+function jsonResponse(data, status = 200) {
+  return new Response(JSON.stringify(data, null, 2), {
+    status,
+    headers: corsHeaders
+  });
+}
+
+// ============================================
+// Main Handler
+// ============================================
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    // CORS preflight
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { status: 200, headers: corsHeaders });
+    }
+
+    // Get private key from env
+    const privateKeyPem = env.UMANG_PRIVATE_KEY_PEM;
+    if (!privateKeyPem) {
+      return jsonResponse({
+        success: false,
+        error: "Server misconfig: UMANG_PRIVATE_KEY_PEM missing"
+      }, 500);
+    }
+
+    // Parse Aadhaar
+    let aadhar = '';
+    if (request.method === 'GET') {
+      aadhar = url.searchParams.get('aadhar') || '';
+    } else if (request.method === 'POST') {
+      let data = {};
+      try {
+        const body = await request.text();
+        if (body) {
+          try { data = JSON.parse(body); }
+          catch {
+            const params = new URLSearchParams(body);
+            data = Object.fromEntries(params);
+          }
+        }
+      } catch {
+        return jsonResponse({ success: false, error: "Invalid request body" }, 400);
+      }
+      aadhar = data.aadhar || '';
+    } else {
+      return jsonResponse({ success: false, error: "Method not allowed" }, 405);
+    }
+
+    // Validate
+    if (!aadhar || aadhar.length !== 12 || !/^\d{12}$/.test(aadhar)) {
+      return jsonResponse({
+        success: false,
+        error: "Invalid Aadhaar. Must be 12 digits."
+      }, 400);
+    }
+
+    try {
+      // Step 1: Aadhaar → Ration Card
+      const rationResult = await getRationFromAadhar(aadhar);
+
+      if (!rationResult.success || !rationResult.data) {
+        return jsonResponse({
+          success: false,
+          error: rationResult.message || 'Ration card not found',
+          owner: "@suryaxz"
+        }, 404);
+      }
+
+      const rationCard = rationResult.data.rationCardNumber;
+
+      // Step 2: Ration Card → UMANG Data
+      const umangData = await fetchUmangData(rationCard, privateKeyPem);
+
+      return jsonResponse({
+        success: true,
+        aadhar: aadhar.slice(0, 4) + "********" + aadhar.slice(-4),
+        rationCardNumber: rationCard,
+        umangData: umangData,
+        owner: "@suryaxz",
+        developer: "Surya Hacker"
+      });
+
+    } catch (e) {
+      return jsonResponse({
+        success: false,
+        error: e.message || "Internal error",
+        owner: "@suryaxz"
+      }, 500);
+    }
+  }
+};

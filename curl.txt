@@ -1,0 +1,856 @@
+# =============================================
+#  NAPIX mParivahan API - Complete curl list
+#  Total endpoints: 283
+#  Base: https://attacks-framed-ballot-deaf.trycloudflare.com (cloudflare tunnel)
+#  🔴 = write route (SMS/session-gated / ALLOW_WRITE_ROUTES=true)
+#  🟢 = read route (works out of the box)
+# =============================================
+
+🔴 POST /84gghca   # Resend OTP / alert SMS
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/84gghca -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /6cr96y7   # Clear a push-notification flag
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/6cr96y7 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /tzbhpve   # Read push notifications for the app user
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/tzbhpve -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /s7ye4np   # States where a service is enabled
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/s7ye4np -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /4cbej5k   # Set Vahan activity-log status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/4cbej5k -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /mqv5cwe   # Read Vahan activity-log entries
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/mqv5cwe -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /rf4nbtw   # Set e-challan activity-log status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rf4nbtw -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /kdv67cu   # Set Sarathi activity-log status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/kdv67cu -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /hu3wd7b   # Set Vahan activity-log status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/hu3wd7b -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /vrjz44q   # Remove an SOS contact
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/vrjz44q -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /an2q6kg   # Read SOS contacts
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/an2q6kg -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /jqvxe4d   # Save an SOS contact
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/jqvxe4d -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /rjk6mn7   # Update an SOS contact
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rjk6mn7 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /rnqfgc9   # Read the citizen profile photo
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rnqfgc9 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /6dyjzjh   # Read the citizen profile
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/6dyjzjh -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /ywcy375   # Validate an uploaded application
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ywcy375 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /rprry6z   # Save the citizen profile
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rprry6z -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /hxz3bx5   # Update the citizen profile
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/hxz3bx5 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /wua4rv8   # Update citizen account details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/wua4rv8 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /mq62faf   # Upload the citizen profile photo
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/mq62faf -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /m82kbdr   # Learner-licence service validity check
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/m82kbdr -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /ep5parz   # Start a learner-licence application
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ep5parz -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /cp92g4u   # OAuth access token for the API
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/cp92g4u -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /83wfcen   # Final confirm of an edited application
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/83wfcen -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /cnwccc9   # Read an editable application's data
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/cnwccc9 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /b5mf7sf   # Confirm an edited application step
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/b5mf7sf -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /5rk29va   # Check OTP for an application edit
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/5rk29va -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /dqxyrtj   # E-transaction payment (PGI) initiate
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/dqxyrtj -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /rayz9rd   # Verify e-transaction payment details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rayz9rd -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /eqdtrcw   # Challans by mobile number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/eqdtrcw -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /ecyyqpf   # Challan / receipt PDF print URLs
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ecyyqpf -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /f8j8rzc   # Virtual-court challan details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/f8j8rzc -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /rjzsfmp   # After-payment callback for NGMP
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rjzsfmp -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /sv7kb8y   # Start an NGMP payment
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/sv7kb8y -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /2v36gnc   # Verify an NGMP payment
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/2v36gnc -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /fd5afjp   # Save e-challan activity log
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fd5afjp -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /bqumdtx   # Detail of a challan
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/bqumdtx -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /4db87ea   # Update e-challan activity log
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/4db87ea -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /phhgxha   # Verify challan payment status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/phhgxha -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /wv2j97j   # Request add-vehicle-class data
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/wv2j97j -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /wwu7t3u   # Submit an add-vehicle-class request
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/wwu7t3u -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /9e5vaz3   # Set Sarathi activity-log status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/9e5vaz3 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /5ddc69v   # Read Sarathi activity-log entries
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/5ddc69v -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /8t9ppy2   # Pre-payment check for vehicle tax
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/8t9ppy2 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /c8ej2hg   # Post-payment step for vehicle tax
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/c8ej2hg -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /mn8ezd5   # Print tax receipt
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/mn8ezd5 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /8y5xqk7   # Tax-period helper (mode dates)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/8y5xqk7 -H "Content-Type: application/json" -d '{"state_code":"GJ","rc_number":"GJ14BM5799","tax_period":"31-03-2026","purpose_code":"100","number_of_permits":"1"}'
+
+🟢 POST /ut7nq4q   # Tax purpose-code labels
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ut7nq4q -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /w3mgjqv   # Available UI languages
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/w3mgjqv -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /snbsx5k   # Language strings JSON
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/snbsx5k -H "Content-Type: application/json" -d '{"language":"en"}'
+
+🔴 POST /9je37xr   # Save DL e-KYC request
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/9je37xr -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /fexwwc7   # Save DL Aadhaar details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fexwwc7 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /v2hejsz   # Save DL Aadhaar-OTP request
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/v2hejsz -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /2ugzxdt   # Save DL Aadhaar-OTP response
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/2ugzxdt -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /eqrnm2h   # Save Sarathi activity log
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/eqrnm2h -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /kn7scyd   # DL application acknowledgement details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/kn7scyd -H "Content-Type: application/json" -d '{"dl_number":"UP1420110000000"}'
+
+🟢 POST /rd5zcv2   # IDP class-of-vehicle grades
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rd5zcv2 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /jjcscwx   # Mobile-update request details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/jjcscwx -H "Content-Type: application/json" -d '{"dl_number":"UP1420110000000"}'
+
+🔴 POST /88sssqn   # Countries with NAT visa for a code
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/88sssqn -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /bn44knr   # Countries an applicant can apply for
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/bn44knr -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /je8edd3   # Service rejection reasons by transaction
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/je8edd3 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /7bkw2sg   # Submit a mobile-number update
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7bkw2sg -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /reunfrb   # Audit log for Sarathi activity
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/reunfrb -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /6symje3   # RTO list for a state
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/6symje3 -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🔴 POST /pgbvs3d   # State-specific customs detail
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/pgbvs3d -H "Content-Type: application/json" -d '{"state_cd":"UP"}'
+
+🟢 POST /pc2bxf7   # DL details by DL number + DOB
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/pc2bxf7 -H "Content-Type: application/json" -d '{"dl_number":"UP1420110000000","date_of_birth":"01-01-1990"}'
+
+🟢 POST /aqnd6v9   # Last RTO attached to a DL
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/aqnd6v9 -H "Content-Type: application/json" -d '{"dl_number":"UP1420110000000"}'
+
+🟢 POST /vmvw234   # Districts of a state
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/vmvw234 -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🟢 POST /vrx6ese   # All states master list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/vrx6ese -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /2kmnq9a   # Sub-districts of a district
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/2kmnq9a -H "Content-Type: application/json" -d '{"state_code":"UP","district_code":"301"}'
+
+🟢 POST /ke7zzvf   # Villages / towns of a sub-district
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ke7zzvf -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /vxwwmpj   # Custom document list for a service
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/vxwwmpj -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /2vzg63w   # Documents already uploaded
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/2vzg63w -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /x3tsn83   # Acceptable proof types
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/x3tsn83 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /242cu7q   # Upload-requirements for photo/signature
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/242cu7q -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /xs3zeux   # Document rules / requirements
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/xs3zeux -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /fk8a9n3   # DL application acknowledgement details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fk8a9n3 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /5sb7wcn   # Fetch a stored image
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/5sb7wcn -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /2gcx2cu   # Advance the upload flow step
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/2gcx2cu -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /s7gyh5x   # Manage uploaded documents
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/s7gyh5x -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /85g72yd   # Save biometric capture
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/85g72yd -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /53yv88r   # Form-3 print payload
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/53yv88r -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /c2jfqrq   # Blood-group master list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/c2jfqrq -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /2qczufz   # Learner-licence camps
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/2qczufz -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🟢 POST /9wfjtp5   # Country master list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/9wfjtp5 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /vqmeab4   # Driving schools of a state
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/vqmeab4 -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🟢 POST /q9harqh   # Qualification master list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/q9harqh -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /ecm97qf   # Class-of-vehicle codes by category
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ecm97qf -H "Content-Type: application/json" -d '{"application_category":"LL"}'
+
+🔴 POST /j7rx3tq   # Start a new learner-licence
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/j7rx3tq -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /h7hm5xx   # Service-withdrawal eligibility
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/h7hm5xx -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /m4ncf6r   # Pre-withdrawal check
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/m4ncf6r -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /mrcbstn   # Applied services that can be withdrawn
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/mrcbstn -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🔴 POST /32hfxe6   # Withdrawal reason list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/32hfxe6 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /p3xdq5z   # Submit a service withdrawal
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/p3xdq5z -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /rkf6tme   # Check OTP for an application edit
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rkf6tme -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /srmfcmn   # Learner-licence via LL no. + DOB
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/srmfcmn -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /r7hjx7h   # State-wise driving schools
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/r7hjx7h -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /wk38p3v   # Save a new DL application
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/wk38p3v -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /2d9xcpx   # Provisional DL receipt
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/2d9xcpx -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /krmm7g5   # Applicant details for slot booking
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/krmm7g5 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /arzq4j8   # Available DL slots
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/arzq4j8 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /7688syr   # Applicant details (slots)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7688syr -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /4fdm7s9   # Available slots
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/4fdm7s9 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /btvgmum   # DL applicant details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/btvgmum -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /6ykefdj   # DL-test slot details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/6ykefdj -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /7xbgejk   # Book a DL slot
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7xbgejk -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /3zjttkm   # Book a slot
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/3zjttkm -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /9794gfz   # Book a DL-test slot
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/9794gfz -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /vkbd9ey   # Application info (upload flow)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/vkbd9ey -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /ry37pf2   # Application status by appl. no.
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ry37pf2 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /u9mpwam   # District master list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/u9mpwam -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🟢 POST /h227n83   # State master list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/h227n83 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /a8trjbw   # Districts of a state
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/a8trjbw -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🟢 POST /y6ecdy4   # GRO list (gram panchayat)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/y6ecdy4 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /fyvz37r   # Nodal-officer list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fyvz37r -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /4576nvs   # Challans of a mobile/vehicle
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/4576nvs -H "Content-Type: application/json" -d '{"mobile_number":"9499854986","user_id":"9499854986","rc_number":"GJ14BM5799"}'
+
+🟢 POST /9j3hh6s   # Vehicles linked to a mobile number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/9j3hh6s -H "Content-Type: application/json" -d '{"mobile_number":"9499854986"}'
+
+🔴 POST /jre6tnq   # Owner of a vehicle
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/jre6tnq -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /9dp87r5   # Owner details from a PAN
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/9dp87r5 -H "Content-Type: application/json" -d '{"pan_number":"ABCDE1234F"}'
+
+🔴 POST /snyphep   # Full RC record of a reg number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/snyphep -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799"}'
+
+🔴 POST /c2a3pfs   # RTO office info for a vehicle
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/c2a3pfs -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /zqd7av8   # All states list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/zqd7av8 -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /wxnvu24   # Districts of a state code
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/wxnvu24 -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🔴 POST /mvdfav2   # Send login OTP (server returns it)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/mvdfav2 -H "Content-Type: application/json" -d '{"mobile_number":"9499854986","user_id":"9499854986"}'
+
+🔴 POST /7ha9ru6   # Verify the mobile login OTP
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7ha9ru6 -H "Content-Type: application/json" -d '{"mobile_number":"9499854986","user_id":"9499854986","otp":"123456","rc_number":"GJ14BM5799"}'
+
+🔴 POST /4p5ssbk   # NGMP multi-challan after-payment
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/4p5ssbk -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /5z88xhu   # Start NGMP multi-challan payment
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/5z88xhu -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /48at7wz   # Verify an NGMP payment
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/48at7wz -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /9pgfsx2   # Send SOS alerts to contacts
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/9pgfsx2 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /uywpznn   # Set e-challan activity-log status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/uywpznn -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /pbmxw99   # Read e-challan activity log
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/pbmxw99 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /kp2vmkf   # Aadhaar e-KYC response step
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/kp2vmkf -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /fqpqz7n   # Generate a fresh OTP
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fqpqz7n -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /95x7ynh   # Verify a fresh OTP
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/95x7ynh -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /m87wdtv   # Check DL impound status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/m87wdtv -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /6rv2aps   # Check DL impound status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/6rv2aps -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /r5trm9m   # Check RC impound status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/r5trm9m -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /z6t5wrw   # Check RC impound status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/z6t5wrw -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /s249qx6   # AITP certificate details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/s249qx6 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /8jrwcz4   # Post-payment step (versioned)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/8jrwcz4 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /97hyxdm   # Appointment payment status
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/97hyxdm -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /t4eh2x2   # Appointment applicant data
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/t4eh2x2 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /nakhd4b   # Permit online state config
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/nakhd4b -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /afkmd2y   # Online service config data
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/afkmd2y -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /dk9f9r4   # Check hold on a service
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/dk9f9r4 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /fd36p4p   # NOC certificate data
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fd36p4p -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /9fevtjt   # eSign URL for a service
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/9fevtjt -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /fhaugjv   # Service pre-checks config
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fhaugjv -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /854kcr2   # Auth-mode check for a service
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/854kcr2 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /khp3jma   # Auth-mode options
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/khp3jma -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /mezj59v   # Applicant data for reschedule
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/mezj59v -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /fb4rtaw   # Reschedule availability
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fb4rtaw -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /6y4fg3f   # Pre-payment step (versioned)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/6y4fg3f -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /7gamqqv   # Pre-payment step v1
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7gamqqv -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /27a5p88   # Counter for allotted services
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/27a5p88 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /nxs73ww   # Service fee details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/nxs73ww -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /7tbzn5w   # Pre-filled form data
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7tbzn5w -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /5ujmxwn   # Registered mobile fetch step
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/5ujmxwn -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /5jhv2vq   # HPT search
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/5jhv2vq -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /rswg689   # NOC-cancel reason options
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rswg689 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /rzu9ch2   # Registered mobile of a reg number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rzu9ch2 -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🟢 POST /vyx24rp   # Registered mobile of a reg number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/vyx24rp -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🔴 POST /9w2xayu   # Owner + insurance/PUCC/permit summary
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/9w2xayu -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🔴 POST /bbaumeq   # Duplicate-RC reason list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/bbaumeq -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /bny6shn   # Offices of a state
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/bny6shn -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🟢 POST /p3cwhh7   # Offices of a state
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/p3cwhh7 -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🔴 POST /63tzgur   # Appointment availability
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/63tzgur -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /83m4ve2   # State/office code pair
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/83m4ve2 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /tgj7b77   # All states list (versioned)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/tgj7b77 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /8h83qx3   # Taluka-level service check
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/8h83qx3 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /dp6rpwc   # RTO-level service check
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/dp6rpwc -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /d3xg7q4   # Services allowed for a reg number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/d3xg7q4 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /ce2hywz   # Vehicle class + description
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ce2hywz -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /u7jkqmx   # Districts of a state code
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/u7jkqmx -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🔴 POST /47kanph   # HPT details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/47kanph -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /yg5qn3k   # Save a rescheduled appointment
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/yg5qn3k -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /wugxk9j   # Final-submit prep data
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/wugxk9j -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /nmsdsbv   # Duplicate-RC application draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/nmsdsbv -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /wmuvxu5   # HPT application draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/wmuvxu5 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /bmu72rv   # Save appointment booking
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/bmu72rv -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /m3c9txs   # Change-of-address draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/m3c9txs -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /r4g5zm2   # Submit duplicate-RC application
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/r4g5zm2 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /vgfxzq6   # Save NOC draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/vgfxzq6 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /jye2ss5   # Generate a fresh OTP
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/jye2ss5 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /vbqaghr   # Verify a fresh OTP
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/vbqaghr -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /vwcdb5g   # Validate Aadhaar by reg number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/vwcdb5g -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /eaj2ybg   # Submit mobile-number update
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/eaj2ybg -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /7d8g2cq   # Save update from mobile step
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7d8g2cq -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /jc2852s   # Validate Aadhaar for update
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/jc2852s -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /uszy3vn   # Verify vehicle details (update)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/uszy3vn -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /4urvquv   # Mobile-update draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/4urvquv -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /heafc3r   # Verify Aadhaar details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/heafc3r -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /tgdkk2y   # Validate reg number + chassis
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/tgdkk2y -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /tc572tw   # Reprint receipt details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/tc572tw -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /k4zvx75   # Owner + insurance/PUCC/permit summary
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/k4zvx75 -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🔴 POST /94gf7wm   # User-type list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/94gf7wm -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /w6uwnqx   # Vehicle-transfer application data
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/w6uwnqx -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /7rjbuyg   # Dispose an application
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7rjbuyg -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /8m3tkww   # Details by reg number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/8m3tkww -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🟢 POST /qs98krv   # Details by transaction number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/qs98krv -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /b8sfkur   # Disposal details of an application
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/b8sfkur -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /dwnh5kv   # Tax breakup of a vehicle
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/dwnh5kv -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🔴 POST /5xsqf44   # List of disposed applications
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/5xsqf44 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /c3p796u   # Check if record sent to bank
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/c3p796u -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /5rc53ad   # Check if record sent to bank (v1)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/5rc53ad -H "Content-Type: application/json" -d '{}'
+
+🟢 GET /yndczy4   # Prepare a document (URL path params)
+   curl -s -X GET https://attacks-framed-ballot-deaf.trycloudflare.com/yndczy4
+
+🔴 POST /8zzbycd   # Special-permit validity calc
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/8zzbycd -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /jzer4ga   # Permit validity calc
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/jzer4ga -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🔴 POST /zvvph2g   # Permit fee details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/zvvph2g -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /nsvznxc   # Save special-permit draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/nsvznxc -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /2xmztfm   # Goods-type search
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/2xmztfm -H "Content-Type: application/json" -d '{"state_code":"UP"}'
+
+🟢 POST /6uyuwvd   # Permit document list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/6uyuwvd -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /eyfbmw2   # Save duplicate-fitness draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/eyfbmw2 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /e6psqme   # Duplicate-permit draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/e6psqme -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /8xjzg3n   # RC-cancel draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/8xjzg3n -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /y5t24rf   # RC-release draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/y5t24rf -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /dpqx8z2   # RC-surrender draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/dpqx8z2 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /bh7hpgh   # Save temporary-permit draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/bh7hpgh -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /rhhdy77   # Special-permit details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rhhdy77 -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🟢 POST /5dzrdsb   # Temporary-permit details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/5dzrdsb -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🔴 POST /th5r57m   # Download a PUCC document
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/th5r57m -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /hjq39cg   # HPA (hire-purchase) draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/hjq39cg -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /q6b7ecm   # HPT type list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/q6b7ecm -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /h63f9pa   # Misc fee details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/h63f9pa -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🔴 POST /24txwff   # Renew-permit draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/24txwff -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /mkx7v3t   # Vehicle permit details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/mkx7v3t -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🔴 POST /cz96646   # Checkpost receipt check
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/cz96646 -H "Content-Type: application/json" -d '{"receipt_number":"UP090012345678"}'
+
+🔴 POST /fbgmtxt   # Fancy-number fee receipt
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fbgmtxt -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /7knaw6c   # Available fancy numbers
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7knaw6c -H "Content-Type: application/json" -d '{"state_code":"UP","rto_code":"09"}'
+
+🔴 POST /mckrthr   # Fancy-number auction result
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/mckrthr -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /8mn5uka   # Running fancy-number auction
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/8mn5uka -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /ena57yx   # Fancy-number allotment letter
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ena57yx -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /24s89gx   # Face-based auth (eKYC)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/24s89gx -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /7r7ezm4   # Add-nominee draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7r7ezm4 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /fruz7ge   # Compound fee (DL) details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fruz7ge -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /4hdh4ba   # Compound fee (others) details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/4hdh4ba -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /m5cysag   # Nominee relation list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/m5cysag -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /kzuunjm   # Save NP-auth draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/kzuunjm -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /jy52kqh   # Previous authorization details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/jy52kqh -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /8sjmvmh   # DMS record update
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/8sjmvmh -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /upt9bhu   # DMS config
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/upt9bhu -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /jmdw98t   # DMS document upload
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/jmdw98t -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /an2upym   # View a DMS document
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/an2upym -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /ggm9qg5   # Transfer-of-ownership common data
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ggm9qg5 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /fhtbwjx   # TO services list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fhtbwjx -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /yxkdqs7   # TO services by reg + chassis
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/yxkdqs7 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /7pe64ax   # TO multi-service step
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7pe64ax -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /u93uwxb   # TO purpose list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/u93uwxb -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /zvd8yka   # TO application draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/zvd8yka -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /wpuhhrn   # Addition-of-vehicle draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/wpuhhrn -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /rjq7gfu   # Vehicle details (RC service)
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/rjq7gfu -H "Content-Type: application/json" -d '{"rc_number":"GJ14BM5799","state_code":"GJ"}'
+
+🟢 POST /kebzura   # Permit details
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/kebzura -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /4jpxeyk   # Permit-surrender draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/4jpxeyk -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /czpf3aw   # Surrender purpose codes
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/czpf3aw -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /am5b9xe   # TO draft via mobile
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/am5b9xe -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /appntux   # Multi-service pre-payment
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/appntux -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /ztj5gsz   # Multi-service draft
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/ztj5gsz -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /p9rmx62   # Multi-service fee
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/p9rmx62 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /mkf92f5   # TO draft step
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/mkf92f5 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /xzunzrs   # Submit multi-service application
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/xzunzrs -H "Content-Type: application/json" -d '{}'
+
+🟢 GET /3bmemr6   # Print duplicate-fitness certificate
+   curl -s -X GET https://attacks-framed-ballot-deaf.trycloudflare.com/3bmemr6
+
+🟢 GET /srvuyyq   # Vahan service endpoint
+   curl -s -X GET https://attacks-framed-ballot-deaf.trycloudflare.com/srvuyyq
+
+🔴 POST /34t4s2m   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/34t4s2m -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /n2nwp4k   # All states list
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/n2nwp4k -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /cc57wtz   # Vehicles linked to a mobile number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/cc57wtz -H "Content-Type: application/json" -d '{"mobile_number":"9499854986"}'
+
+🔴 POST /e3thhnz   # Challans of a mobile/vehicle
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/e3thhnz -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /gp437xx   # Challans by mobile number
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/gp437xx -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /h6q3rgq   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/h6q3rgq -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /d3ucmkk   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/d3ucmkk -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /c32k3hv   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/c32k3hv -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /sqqsjma   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/sqqsjma -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /puzjmhk   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/puzjmhk -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /cqy87xp   # DL-service eligibility by state
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/cqy87xp -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /7ngrmem   # Is Form-1 required for a DL service
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/7ngrmem -H "Content-Type: application/json" -d '{}'
+
+🟢 POST /2pxygw2   # Hill-state driving schools
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/2pxygw2 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /xfz63tp   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/xfz63tp -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /aqt2q3e   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/aqt2q3e -H "Content-Type: application/json" -d '{}'
+
+🔴 GET /3qn4jw9   # Service endpoint
+   curl -s -X GET https://attacks-framed-ballot-deaf.trycloudflare.com/3qn4jw9
+
+🔴 POST /w6c7tfb   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/w6c7tfb -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /8pdfx7z   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/8pdfx7z -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /w2hcxud   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/w2hcxud -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /tj9vjh5   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/tj9vjh5 -H "Content-Type: application/json" -d '{}'
+
+🔴 POST /fwkhs3r   # Service endpoint
+   curl -s -X POST https://attacks-framed-ballot-deaf.trycloudflare.com/fwkhs3r -H "Content-Type: application/json" -d '{}'
